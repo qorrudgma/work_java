@@ -26,12 +26,14 @@ public class Circle {
 //		new Circle(); // 이름이 없는 Circle
 		pizza = new Circle(); // 객체생성 이름이 pizza
 		pizza.radius = 10; // 멤버변수 값 셋팅
+
 		pizza.name = "자바피자"; // 멤버변수 값 셋팅
 		double area = pizza.getArea(); // 멤버함수 호출
 
 		System.out.println(pizza.name + "의 면적은 " + area); // 멤버변수 값 사용
 
 		Circle donut = new Circle();
+
 		donut.radius = 2;
 		donut.name = "자바도넛";
 		area = donut.getArea();
