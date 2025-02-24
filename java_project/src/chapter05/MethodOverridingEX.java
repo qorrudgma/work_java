@@ -38,12 +38,12 @@ public class MethodOverridingEX {
 
 	public static void main(String[] args) {
 //		Line line = new Line();
-//		paint(line);
 		paint(new Line()); // 위에 두줄을 한줄로 적음
+//		paint(line);
 
 //		Shape shape = new Shape();
-//		paint(shape);
 		paint(new Shape()); // 위에 두줄을 한줄로 적음
+//		paint(shape);
 
 		paint(new Rect());
 		paint(new Circle());
