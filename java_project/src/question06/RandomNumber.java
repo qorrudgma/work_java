@@ -16,7 +16,7 @@ public class RandomNumber {
 //		double b = generator.nextDouble() + 1;
 
 		while (true) {
-			rNumber = generator.nextInt(10) + 1;
+			rNumber = generator.nextInt(100) + 1;
 //			Thread.sleep(1000);
 			System.out.println(rNumber);
 			if (rNumber == 7) {
