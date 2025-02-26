@@ -1,14 +1,19 @@
 package question08;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 abstract class Calculator {
 	int a;
 	int b;
 
-	void setValue(int x, int y) {
-		a = x;
-		b = y;
+	public void setValue(int a, int b) {
+		this.a = a;
+		this.b = b;
 	}
 
 	abstract int calculate();
@@ -43,14 +48,17 @@ class Div2 extends Calculator {
 }
 
 public class Calc2 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		System.out.print("두 정수와 연산자를 입력하시오>>");
-		int num1 = sc.nextInt();
-		int num2 = sc.nextInt();
-		String a = sc.next();
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-		Calculator calc = null;
+		int num1 = Integer.parseInt(st.nextToken());
+		int num2 = Integer.parseInt(st.nextToken());
+		String a = st.nextToken();
+
+		Calculator calc;
 
 		switch (a) {
 		case "+":
@@ -67,12 +75,17 @@ public class Calc2 {
 			break;
 		default:
 			System.out.println("지원하지 않는 연산자입니다.");
-			sc.close();
+			br.close();
 			return;
 		}
 		calc.setValue(num1, num2);
-		System.out.println(calc.calculate());
+		if (calc instanceof Div2 && num2 == 0) {
+			bw.write("계산할수 없습니다.\n");
+		} else {
+			bw.write(Integer.toString(calc.calculate()));
+		}
+		bw.flush();
 
-		sc.close();
+		bw.close();
 	}
 }

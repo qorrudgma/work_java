@@ -3,14 +3,6 @@ package question08;
 import java.util.Scanner;
 
 class Add {
-//	int a;
-//	int b;
-//
-//	void setValue(int x, int y) {
-//		a = x;
-//		b = y;
-//	}
-
 	int calculate(int x, int y) {
 		return y + x;
 	}
