@@ -8,12 +8,12 @@ interface Shape {
 	double getArea();
 
 	default public void redraw() {
-		System.out.print("--- 다시 그립니다.");
+		System.out.print("--- 다시 그립니다. ");
 		draw();
 	}
 }
 
-class circle extends Shapes implements Shape {
+class circle implements Shape {
 	int r;
 
 	public circle(int r) {
@@ -23,7 +23,6 @@ class circle extends Shapes implements Shape {
 	@Override
 	public void draw() {
 		System.out.println("반지름이 " + r + "인 원입니다.");
-		getArea();
 	}
 
 	@Override
