@@ -22,7 +22,7 @@ public class DicApp_T {
 
 		System.out.println("한영 단어 검색 프로그램 입니다.");
 		while (true) {
-			System.err.print("한글 단어?");
+			System.out.print("한글 단어?");
 			String kor = sc.next();
 			if (kor.equals("그만")) {
 				break;
