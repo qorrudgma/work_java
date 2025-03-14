@@ -19,5 +19,4 @@
 	// url에서 ?이후부터가QueryString이다 키와 값으로 되어있다
 	String value = request.getQueryString();
 	out.print("전송된 요청 파라미터:"+value);
-	
 %>
